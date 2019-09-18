@@ -5,9 +5,10 @@
     <title>Register With Us</title>
 </head>
 <body>
+<h1>Register With Us!</h1>
     <form method="POST" action="https://request-inspector.glitch.me/">
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" placeholder="Username">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" placeholder="Email Address">
         <br>
 
         <label for="password">Password</label>
@@ -20,16 +21,16 @@
         <br><br>
 
         <label>How did you hear about us? <br>
-            <label for="billboard">Billboard<input type="radio" name="how" value="billboard" id="billboard">
+            <label for="billboard">Billboard<input type="checkbox" name="how" value="billboard" id="billboard">
             </label>
             <br>
-            <label for="radio_ad">Radio Advertisement<input type="radio" name="how2" value="radio_ad" id="radio_ad">
+            <label for="radio_ad">Radio Advertisement<input type="checkbox" name="how" value="radio_ad" id="radio_ad">
             </label>
             <br>
-            <label for="internet_ad">Internet Advertisement<input type="radio" name="how3" value="internet_ad" id="internet_ad">
+            <label for="internet_ad">Internet Advertisement<input type="checkbox" name="how" value="internet_ad" id="internet_ad">
             </label>
             <br>
-            <label for="other">Other <input type="radio" name="how4" value="other" id="other">
+            <label for="other">Other <input type="checkbox" name="how" value="other" id="other">
             </label>
             <br>
         </label>
@@ -41,7 +42,7 @@
             <option value="chrome">Chrome</option>
             <option value="firefox">Firefox</option>
         </select>
-
+        <br><br>
         <button type="submit">Submit Form</button>
     </form>
 </body>

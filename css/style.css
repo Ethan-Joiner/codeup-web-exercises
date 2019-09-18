@@ -1,0 +1,21 @@
+.img{
+    height: 175px;
+    width: 300px;
+}
+#img1{
+    height: 200px;
+    width: 300px;
+}
+h1 {
+    text-align: center;
+}
+h1, h2 {
+    color: darkred;
+    text-decoration: underline;
+}
+body {
+    background-color: beige;
+}
+body {
+    background-image: url();
+}
