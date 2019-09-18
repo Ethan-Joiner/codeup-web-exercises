@@ -15,7 +15,8 @@ h1, h2 {
 }
 body {
     background-color: beige;
-}
-body {
-    background-image: url();
+    background-image: url("../img/term.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+
 }
