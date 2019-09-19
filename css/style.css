@@ -10,13 +10,82 @@ h1 {
     text-align: center;
 }
 h1, h2 {
-    color: darkred;
-    text-decoration: underline;
+    color: papayawhip;
+    /*text-decoration: underline;*/
+    vertical-align: text-bottom;
+
+
 }
 body {
     background-color: beige;
     background-image: url("../img/term.jpeg");
     background-size: cover;
     background-attachment: fixed;
+    font-family: "VT323", monospace;
+
+    color: #00dd00;
 }
+.listImg {
+    float:left;
+    width:20px;
+    height:20px;
+    margin-right: 10px;
+    ;
+}
+ul {
+    list-style: none;
+}
+li {
+    font-size: 1.3em;
+}
+ol {
+    margin-left: 25px;
+}
+a:link {
+    color: deepskyblue;
+}
+a:visited{
+    color: red;
+}
+a:hover {
+    color: white;
+}
+a:active {
+    color: yellow;
+}
+#table-div {
+    border: 5px solid red;
+    padding: 5px;
+    background-color: black;
+    width: 44%;
+}
+th {
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+td {
+    margin-left: 5px;
+}
+.eye {
+    height: 12px;
+    width: 12px;
+    /*vertical-align: bottom ;*/
+    margin-top: 2px;
+}
+.blkbox {
+    background-color: black;
+    border: papayawhip 2px solid;
+    padding: 2px;
+}
+table{
+    margin-left: 175px;
+}
+
+tr {
+    text-align: center;
+}
+#tab-head {
+    text-align: center;
+}
+
 
