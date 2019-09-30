@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+a:hover {
+    color: blue;
+}
+a {
+    color: black;
+    display: inline-block;
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    padding: 1em .5em;
+}
+ul {
+    list-style: none;
+    padding: 0 .5em;
+    margin: 0;
+    display: flex;
+    /*justify-content: space-between; NOT NEEDED FOR THIS*/
+    align-items: center;
+}
+
+.container {
+    background-color: #C1C1C1;
+    /*position: relative; NOT NEEDED FOR THIS (Unless you adjust top and bottom properties)*/
+}
+
+#logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    padding: .2em 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    /*NOT NEEDED FOR THIS*/
+    /*margin: 0 auto;*/
+    /*left: 45%;*/
+    /*top: -65px*/
+}
+#jobs {
+    /*margin-right: auto; REDUNDANT*/
+}
+#follow {
+    margin-left: auto;
+}
+#logo-img {
+    margin: auto;
+    /*  SET CHILD ID MARGIN INSIDE PARENT ID TO CENTER  */
+}

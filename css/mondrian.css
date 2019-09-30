@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 2em;
+    background-color: white;
+}
+main {
+    border: 1px solid black;
+    display: inline-grid;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    /*!*grid-template-areas:*!*/
+    /*    "blue blue red red red red red red"*/
+    /*    "blue blue red red red red red red"*/
+    /*    "oj   oj   red red red red red red"*/
+    /*    "oj   oj  white white white white white white"*/
+    /* Did not work with multiple boxes of same color adjacent   */
+}
+div {
+    border: 2px solid black;
+}
+.red {
+    background-color: #DC1C22;
+    /*grid-area: red;*/
+}
+.blue {
+    background-color: #30457B;
+    /*grid-area: blue;*/
+}
+.white {
+    background-color: white;
+    /*grid-area: white;*/
+}
+.oj {
+    background-color: #FCCC0B;
+    /*grid-area: oj;*/
+}
+.r1 {
+    grid-area: 1 / 3 / 4 / 9;
+}
+.r2 {
+    grid-area: 8 / 1 / 9 / 3;
+}
+.o1 {
+    grid-area: 3 / 1 / 6 / 3;
+}
+.o2 {
+    grid-area: 6 / 5 / 8 / 9;
+}
+.b1 {
+    grid-area: 1 / 1 / 3 / 3;
+}
+.b2 {
+    grid-area: -2 / 3 / -1 / -1;
+}
+.w1 {
+    grid-area: 6 / 1 / -2 / 3;
+}
+.w2 {
+    grid-area: 4 / 3 / -2 / 5;
+}
+.w3 {
+    grid-area: 4 / 5 / 6 / -1;
+}

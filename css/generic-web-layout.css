@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    color: #429388;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    /*padding: .5em;*/
+}
+a:hover {
+    color: red;
+}
+.parent {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1.5fr 7fr 4fr;
+    grid-template-rows: 1fr repeat(3, 5fr) 2fr 2fr 1fr;
+    grid-gap: 0;
+    /*grid-template-areas:*/
+    /*            "navUl navUl navUl"*/
+    /*            "sidebar heading1 ad1"*/
+    /*            "sidebar heading2 ad2"*/
+    /*            "sidebar heading3 ad3"*/
+    /*            "sidebar pageNMB pageNMB"*/
+    /*            "sidebar footer footer"*/
+    /*            "sidebar footLink footLink"*/
+}
+.topNav {
+    /*grid-area: topNav;*/
+    grid-area: 1 / 1 / 2 / 4;
+    color: white;
+    background-color: black;
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    /*padding: .5em;*/
+}
+.topNav li{
+    padding: .5em .75em;
+}
+.topNav li:hover{
+    background-color: #333333;
+}
+.topNav a{
+    color: white;
+    display: inline-block;
+    font-size: .8em;
+}
+.topNav a:hover {
+        background-color: #333333;
+}
+.navUl {
+    /*grid-area: 1 / 1 / 2 / 4;*/
+    display: flex;
+    /*justify-content: space-between;*/
+    width: 30%;
+}
+
+/*ALL TOP NAVBAR ABOVE THIS LINE*/
+
+.sidebar {
+    /*grid-area: sidebar;*/
+    grid-area: 2 / 1 / 8 / 2;
+    background-color: #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.sideLink {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 1em;
+}
+.sideLink a{
+    color: black;
+    height: 90%;
+    padding-left: .8em;
+}
+.sideLink a:hover {
+    color: red;
+}
+.sideLink li{
+    padding: 1em 0;
+    font-size: .8em;
+}
+.sideLink #sLMenu {
+    font-size: 1em;
+    padding-left: .4em;
+}
+
+/*SIDEBAR CODE ABOVE*/
+
+
+#heading-wrapper {
+    grid-area: 2 / 2 / 6 / 3;
+    /*background: green;*/
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    /*overflow: scroll;*/
+    line-height: 1;
+    font-size: 2vh;
+}
+.heading {
+    display: flex;
+    align-items: center;
+    /*padding: 1.75em;*/
+}
+.heading1 {
+/*    !*grid-area: heading1;*!*/
+/*    grid-area: 2 / 2 / 3 / 3;*/
+/*    !*max-height: 15vh;*!*/
+/*    !*display: flex;*!*/
+/*    !*flex-wrap: wrap;*!*/
+    padding: 0 .5em 0 1em;
+    height: 162.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.heading2 {
+/*    !*grid-area: heading2;*!*/
+/*    grid-area: 4 / 2 / 5 / 3;*/
+/*    border: 2px solid green;*/
+/*    !*display: flex;*!*/
+/*    !*max-height: 15vh;*!*/
+/*    !*flex-wrap: wrap;*!*/
+    padding: 0 .5em 2em 1em;
+    height: 162.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.heading3 {
+    /*    !*grid-area: heading3;*!*/
+    /*    grid-area: 6 / 2 / span 2 / 3;*/
+    /*    !*display: flex;*!*/
+    /*    !*max-height: 15vh;*!*/
+    /*    !*flex-wrap: wrap;*!*/
+    padding: 0 .5em 0 1em;
+    height: 162.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+/*AD CODE BELOW*/
+
+.ad {
+    /*height: 100%;*/
+    grid-area: 2 / 3 / 5 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ad1 {
+    /*grid-area: ad1;*/
+    /*grid-area: 2 / 3 / 3 / 4;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100% - 20px);
+    width: 100%;
+    padding: 10px ;
+    flex: 1
+}
+#ad1A {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    border: 1px solid #F0F0F0;
+}
+#ad1B {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    border: 1px solid #F0F0F0;
+}
+
+.ad2 {
+    /*grid-area: ad2;*/
+    /*grid-area: 3 / 3 / 4 / 4;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100% - 20px);
+    width: 100%;
+    padding: 10px;
+    flex: 1
+}
+#ad2A {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    border: 1px solid #F0F0F0;
+}
+#ad2B {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    border: 1px solid #F0F0F0;
+}
+.ad3 {
+    /*grid-area: ad3;*/
+    /*grid-area: 4 / 3 / 5 / 4;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100% - 20px);
+    width: 100%;
+    padding: 10px;
+    flex: 1
+}
+#ad3A {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    border: 1px solid #F0F0F0;
+}
+#ad3B {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    border: 1px solid #F0F0F0;
+
+}
+
+
+/*PAGE NUMBER OPTIONS CODE BELOW*/
+
+.pageNMB {
+    /*grid-area: pageNMB;*/
+    grid-area: 5 / 2 / 6 / 4;
+    width: 100%;
+    font-size: .8em;
+    padding-top: 1em;
+}
+.pgNUl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%
+}
+.pgNLi {
+    /*padding: 1em;*/
+}
+.pageNMB a {
+    color: black;
+    padding: 1em 1.25em;
+}
+.pageNMB a:hover {
+    color: white;
+    background-color: black;
+}
+
+/*ALL FOOTER CODE BELOW*/
+.footer {
+    /*grid-area: footer;*/
+    grid-area: 6 / 2 / 7 / 4;
+    background-color: #666666;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: .4em
+}
+.footLink {
+    /*grid-area: footlink;*/
+    grid-area: 7 / 2 / 8 / 4;
+    background-color: #333333;
+    padding: .3em .4em;
+    color: white;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+}
+.footLink a{
+    color: white;
+}
+.footLink:hover {
+    background-color: black;
+}
+.footLink a:hover {
+    color: red;
+}
+
+
+

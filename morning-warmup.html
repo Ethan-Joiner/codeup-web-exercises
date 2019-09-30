@@ -18,11 +18,31 @@
             return area;
         }
         console.log(triangleArea(5, 6, 7));
+
         function sayHi() {
             return "Hi"
         }
-        console.log(sayHi)
+        console.log(sayHi())
 
+        function sayHelloName(name) {
+            return "Hello, " + name + "."
+        }
+        console.log(sayHelloName())
+
+        function firstElement(arr) {
+            return arr[0];
+        }
+        console.log(firstElement([1,2,3,4]))
+
+        function eqtriangleArea(x) {
+            return ((Math.sqrt(3) / 4) * (x * x))
+        }
+        console.log(eqtriangleArea(2))
+
+        function concatenate(x, y, z) {
+            return x + y + z;
+        }
+        console.log(concatenate("test ", "test ", "test"))
 
 
 

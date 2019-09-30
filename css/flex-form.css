@@ -14,13 +14,14 @@ body {
 
 .puppiness {
     height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
 }
 
 .cover {
     height: 100vh;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .flex-form {
@@ -52,10 +53,21 @@ body {
 /*flex solution*/
 .cover {
     /* flex container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+;
 }
 .flex-form {
     /* flex items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    /*flex-grow: .1;*/
+    margin: auto;
 }
 .destination {
     /* bigger item */
+    flex-basis: 35%;
 }

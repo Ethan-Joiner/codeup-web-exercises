@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+}
+main {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    /*grid-template-columns: repeat(4, 25%);*/
+    /*grid-template-rows:  repeat(5, 1fr);*/
+    grid-gap: .5em;
+    grid-template-areas:
+            "one one one one"
+            "two three four four "
+            "two five five six"
+            "two seven eight nine"
+            "two ten ten ten"
+}
+div {
+    background-color: #FAD743;
+    color: white;
+}
+.one {
+    grid-area: one;
+    padding: .5em;
+}
+.two {
+    grid-area: two;
+    padding: .5em;
+}
+.three {
+     grid-area: three;
+     padding: .5em;
+ }
+.four {
+    grid-area: four;
+    padding: .5em;
+}
+.five {
+    grid-area: five;
+    padding: .5em;
+}
+.six {
+    grid-area: six;
+    padding: .5em;
+}
+.seven {
+    grid-area: seven;
+    padding: .5em;
+}
+.eight {
+    grid-area: eight;
+    padding: .5em;
+}
+.nine {
+    grid-area: nine;
+    padding: .5em;
+}
+.ten {
+    grid-area: ten;
+    padding: .5em;
+}
