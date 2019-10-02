@@ -23,7 +23,7 @@
                     <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Menu</a>
+                    <a class="nav-link" href="#collapseOne">Menu</a>
                 </li>
                 <li><form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
@@ -34,8 +34,218 @@
         </div>
     </nav>
     <section class="container">
+        <div class="jumbotron jumbotron-fluid d-none d-md-block">
+            <div class="container-fluid">
+                <h1 class="display-4 text-muted .bg-primary">Welcome to Pizza World</h1>
+            </div>
+        </div>
+        <hr>
+        <h2>Build your own pizza!</h2>
+        <nav>
+            <ul class="nav nav-tabs">
+
+<!--                THIS IS THE CRUST CARD CONTAINER-->
+                    <li class="nav-item"><a class="nav-link" href="#collapseOne" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseOne"><span class="badge badge-pill badge-light">1</span>Size and Crust</a>
+                        <div class="card collapse show" id="collapseOne">
+                            <div class="card-header bg-primary text-white">
+                                Choose size and crust
+                            </div>
+                            <div class="card-body">
+
+<!--                                CRUST CARD 1-->
+                                <div class="card">
+                                    <div class="card-header">
+                                        Hand Tossed
+                                    </div>
+                                        <div class="card-body">
+                                            <p class="card-text">Garlic seasoned crust with a rich, buttery taste.</p>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="HTsmall" value="option1" required>
+                                                <label class="form-check-label" for="HTsmall">
+                                                    Small (10")
+                                                </label>
+                                            </div>
+                                            <hr>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="HTmed" value="option2">
+                                                <label class="form-check-label" for="HTmed">
+                                                    Medium (12")
+                                                </label>
+                                            </div>
+                                        </div>
+                                </div>
+<!--                                CRUST CARD 2-->
+                                <div class="card">
+                                    <div class="card-header">
+                                        Crispy Thin
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Thin enough for optimum crispy to crunch ratio.</p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="exampleRadios" id="TCmed" value="option1">
+                                            <label class="form-check-label" for="TCmed">
+                                                Medium (12")
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="exampleRadios" id="TClarge" value="option2">
+                                            <label class="form-check-label" for="TClarge">
+                                                Large (14")
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="card-footer text-right"><a href="#collapseOne, #collapseTwo" data-toggle="collapse" class="btn btn-primary">Next Step ></a></div>
+                            </div>
+                        </div>
+                </li>
+
+<!--                THIS IS THE CHEESE AND SAUCE CARD CONTAINER-->
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseTwo"><li class="nav-item"><span class="badge badge-pill badge-light">2</span>Cheese and Sauce</a>
+                <div class="card collapse" id="collapseTwo">
+                    <div class="card-header bg-primary text-white">
+                        Choose Cheese and Sauce
+                    </div>
+                    <div class="card-body">
+<!--                        CHEESE CARD-->
+                        <div class="card">
+                            <div class="card-header">
+                                Cheese
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">How Much?</p>
+                                <select class="form-control">
+                                    <option value="Light">Light</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="Extra">Extra</option>
+                                    <option value="Double">Double</option>
+                                </select>
+                            </div>
+                        </div>
+<!--                        SAUCE CARD-->
+                        <div class="card">
+                            <div class="card-header">
+                                Sauce
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">What Type?</p>
+                                    <select class="form-control">
+                                        <option value="tomato">Tomato Sauce</option>
+                                        <option value="marinara">Marinara Sauce</option>
+                                        <option value="bbq">BBQ Sauce</option>
+                                        <option value="alfredo">Alfredo Sauce</option>
+                                    </select>
+                                <hr>
+                                <p class="card-text">How Much?</p>
+                                     <select class="form-control">
+                                         <option value="light">Light</option>
+                                         <option value="normal">Normal</option>
+                                         <option value="extra">Extra</option>
+                                     </select>
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <a href="#collapseTwo, #collapseOne" data-toggle="collapse" class="btn btn-primary"> < Previous Step</a>
+                            <a href="#collapseTwo, #collapseThree" data-toggle="collapse" class="btn btn-primary">Next Step > </a>
+                        </div>
+                    </div>
+                </div>
+                </li>
+
+<!--                THIS IS THE TOPPINGS CARD-->
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseThree"><li class="nav-item"><span class="badge badge-pill badge-light">3</span>Toppings</a>
+                        <div class="card collapse" id="collapseThree">
+                            <div class="card-header bg-primary text-white">
+                                Choose Toppings
+                            </div>
+                            <div class="card-body">
+
+<!--                                THIS IS THE MEAT OPTIONS CARD-->
+                                <div class="card">
+                                    <div class="card-header">
+                                        Choose Meats
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="beef">
+                                            <label class="form-check-label" for="beef">
+                                                Beef
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="ham">
+                                            <label class="form-check-label" for="ham">
+                                                Ham
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="philly">
+                                            <label class="form-check-label" for="philly">
+                                                Philly Steak
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="bacon">
+                                            <label class="form-check-label" for="bacon">
+                                                Bacon
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+<!--                                THIS IS THE NON MEATS TOPPINGS CARD-->
+                                <div class="card">
+                                    <div class="card-header">
+                                        Choose Non-Meats
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="greenpeppers">
+                                            <label class="form-check-label" for="greenpeppers">
+                                                Green Peppers
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="Mushrooms">
+                                            <label class="form-check-label" for="Mushrooms">
+                                                Mushrooms
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="onions">
+                                            <label class="form-check-label" for="onions">
+                                                Onions
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="jalapeno">
+                                            <label class="form-check-label" for="jalapeno">
+                                                Jalapeno Peppers
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <a href="#collapseThree, #collapseTwo" data-toggle="collapse" class="btn btn-primary"> < Previous Step</a>
+                                    <a href="#" class="btn btn-primary"> Checkout</a>
+                                </div>
+
+                            </div>
+                        </div>
 
 
+                </li>
+            </ul>
+        </nav>
     </section>
 <!-- Main page content -->
 
