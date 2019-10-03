@@ -9,8 +9,7 @@
         function sumOf(x, y) {
             return x + y;
          }
-
-         console.log(2, 2);
+         console.log(sumOf(2, 2));
 
         function triangleArea(a, b, c){
             var half = (a+b+c)/2;
@@ -22,32 +21,47 @@
         function sayHi() {
             return "Hi"
         }
-        console.log(sayHi())
+        console.log(sayHi());
 
         function sayHelloName(name) {
             return "Hello, " + name + "."
         }
-        console.log(sayHelloName())
+        console.log(sayHelloName());
 
         function firstElement(arr) {
             return arr[0];
         }
-        console.log(firstElement([1,2,3,4]))
+        console.log(firstElement([1,2,3,4]));
 
         function eqtriangleArea(x) {
             return ((Math.sqrt(3) / 4) * (x * x))
         }
-        console.log(eqtriangleArea(2))
+        console.log(eqtriangleArea(2));
 
         function concatenate(x, y, z) {
             return x + y + z;
         }
-        console.log(concatenate("test ", "test ", "test"))
+        console.log(concatenate("test ", "test ", "test"));
 
         function upperCase(x) {
             return x.toUpperCase();
         }
         console.log(upperCase("dog"));
+
+        function circleArea(x) {
+            return Math.PI * ((x / 2) * (x / 2));
+        }
+        console.log(circleArea(3));
+
+        function circle(x) {
+            return (Math.PI / 4) * (x * x);
+        }
+        console.log(circle(3));
+
+        function quadPerimeter(a,b,c,d) {
+            return (a + b + c + d);
+        }
+        console.log(quadPerimeter(1,2,3,4))
     </script>
 
 
