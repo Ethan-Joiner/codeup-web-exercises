@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS EXERCISES</title>
+</head>
+<body>
+    <script>
+        // Number 3 Part 1 //
+        function pay(cost) {
+            return (cost + (cost * 3) + (cost * 5));
+        }
+        console.log(pay(3));
+
+        // Number 3 Part 2//
+
+        function weeklyPay(g,a,f) {
+            return (g * 6 + a * 4 + f * 10);
+        }
+        console.log(weeklyPay(400,380,350));
+
+        // Number 3 Part 3 //
+
+        function canEnroll(notFull,noConflict) {
+            if (notFull == true && noConflict == true);
+            return true;
+        }
+        console.log(canEnroll(true,true));
+
+        // Number 3 Part 4 //
+
+        function offer(items,isPremium,notExpired) {
+
+            return (items > 2 || isPremium == true) && notExpired == true;
+        }
+        console.log(offer(3,false,true));
+        console.log(offer(1,true,true));
+        console.log(offer(3,false,false));
+
+        // Number 4 //
+
+
+        function validPassword(user,pass) {
+            var username = "codeup";
+            var password= "notastrongpassword";
+            if (pass.length > 4 && user.length <= 20 && pass.indexOf(user) === -1 && pass === pass.trim() && user === user.trim())
+            {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(validPassword(username,password));
+
+
+        password.length >= 5 && password.indexOf(username) === -1 && username.length <=20 && username === username.trim()
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
