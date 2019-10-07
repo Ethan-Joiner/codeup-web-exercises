@@ -39,10 +39,10 @@
 
         // Number 4 //
 
+            var username = "codeup";
+            var password = "notastrongpassword";
 
         function validPassword(user,pass) {
-            var username = "codeup";
-            var password= "notastrongpassword";
             if (pass.length > 4 && user.length <= 20 && pass.indexOf(user) === -1 && pass === pass.trim() && user === user.trim())
             {
                 return true;
