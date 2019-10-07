@@ -8,19 +8,42 @@ var color = prompt("What is your favorite color?");
 
 alert("Great, " + color + " is my favorite color too!");
 
-// Number 3 Part 1 //
+
+// Testing some requirements //
 function pay() {
     var mermaidDays = parseInt(prompt("How many days did you rent 'The little Mermaid' for?"));
-    var brotherDays = parseInt(prompt("How many days did you rent 'Brother Bear' for?"));
+    if (isNaN(mermaidDays)) {
+        parseInt(prompt("You must enter a number"));
+    } else {
+        var brotherDays = parseInt(prompt("How many days did you rent 'Brother Bear' for?"));
+    }
+
     var herculesDays = parseInt(prompt("How many days did you rent 'Hercules' for?"));
     var cost = parseInt(prompt("How much do they cost a day?"));
-
     var totalCost = cost * herculesDays + (cost * mermaidDays) + (cost * brotherDays);
-    alert("Your total cost is $" + totalCost);
-    console.log(typeof totalCost);
-    return totalCost;
+
+    } else {
+
+        alert("Your total cost is $" + totalCost);
+        console.log(typeof totalCost);
+        return totalCost;
+    }
 }
 console.log(pay());
+
+// Number 3 Part 1 //
+// function pay() {
+//     var mermaidDays = parseInt(prompt("How many days did you rent 'The little Mermaid' for?"));
+//     var brotherDays = parseInt(prompt("How many days did you rent 'Brother Bear' for?"));
+//     var herculesDays = parseInt(prompt("How many days did you rent 'Hercules' for?"));
+//     var cost = parseInt(prompt("How much do they cost a day?"));
+//
+//     var totalCost = cost * herculesDays + (cost * mermaidDays) + (cost * brotherDays);
+//     alert("Your total cost is $" + totalCost);
+//     console.log(typeof totalCost);
+//     return totalCost;
+// }
+// console.log(pay());
 
 // Number 3 Part 2//
 
