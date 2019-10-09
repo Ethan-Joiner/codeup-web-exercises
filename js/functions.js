@@ -81,9 +81,9 @@ console.log(calculateTip(20, 20));
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var reportedTotal = parseInt(prompt("How much was your bill?"));
+var reportedTotal = parseFloat(prompt("How much was your bill?"));
 var desiredTip = parseInt(prompt("What tip percentage would you like to leave?"));
-alert("Your tip amount is " + calculateTip(desiredTip,reportedTotal));
+alert("Your tip amount is $" + calculateTip(desiredTip,reportedTotal));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
