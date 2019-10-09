@@ -72,5 +72,5 @@ console.log(overFive());
 function helloStranger(x = "stranger") {
     return "Hello there, " + x + "."
 }
-var prompted = prompt("Input a name")
+var prompted = prompt("Input a name");
 alert(helloStranger());
