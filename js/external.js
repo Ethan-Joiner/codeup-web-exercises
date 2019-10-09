@@ -12,11 +12,20 @@ alert("Great, " + color + " is my favorite color too!");
 // Testing some requirements //
 function pay() {
     var mermaidDays = parseInt(prompt("How many days did you rent 'The little Mermaid' for?"));
-    if (isNaN(mermaidDays)) {
-        parseInt(prompt("You must enter a number"));
-    } else {
-        var brotherDays = parseInt(prompt("How many days did you rent 'Brother Bear' for?"));
+    console.log("Mermaid days: " + mermaidDays);
+
+    while (isNaN(mermaidDays)){
+       mermaidDays = parseInt(prompt("You must enter a number"));
+       console.log("while loop mermaid :" + mermaidDays);
     }
+
+    var brotherDays = parseInt(prompt("How many days did you rent 'Brother Bear' for?"));
+
+
+
+
+    if (isNaN(brotherDays)) {
+        parseInt(prompt("Brother bear: You must enter a number"));
 
     var herculesDays = parseInt(prompt("How many days did you rent 'Hercules' for?"));
     var cost = parseInt(prompt("How much do they cost a day?"));
@@ -115,3 +124,7 @@ console.log(offer());
 // console.log(offer(3,false,true));
 // console.log(offer(1,true,true));
 // // console.log(offer(3,false,false));
+
+
+
+

@@ -107,3 +107,16 @@ function applyDiscount() {
 }
 
 console.log(applyDiscount());
+
+
+// Testing Some Loops //
+function counter(x) {
+
+    while (x < 70000) {
+        console.log("Doubling number " + x);
+        x = x * 2;
+    }
+    return x;
+}
+
+counter(2);
