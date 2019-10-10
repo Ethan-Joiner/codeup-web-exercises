@@ -74,3 +74,12 @@ function helloStranger(x = "stranger") {
 }
 var prompted = prompt("Input a name");
 alert(helloStranger());
+
+
+// Write a function that accepts an array and returns the length of that array
+function lengthOfArray(x) {
+    return x.length;
+}
+
+console.log(lengthOfArray([1, 2, 3, 4]));
+console.log(lengthOfArray([2, 1, 6, 3, 4]));
