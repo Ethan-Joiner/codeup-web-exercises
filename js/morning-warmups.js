@@ -95,10 +95,14 @@ function quotient(x, y) {
 console.log(quotient(5, "1"));
 console.log(quotient(5, 1));
 
-function fiveArray(X) {
-    console.log(fiveArray(x[0]));
-    console.log(fiveArray(x[1]));
-    console.log(fiveArray(x[2]));
-    console.log(fiveArray(x[3]));
-    console.log(fiveArray(x[4]));
+
+// Function that accepts an array that has a length of 5 and console log each element
+function fiveArray(x) {
+    console.log(x[0]);
+    console.log(x[1]);
+    console.log(x[2]);
+    console.log(x[3]);
+    console.log(x[4]);
 }
+
+console.log(fiveArray([1, 2, 3, 4, 5]));
