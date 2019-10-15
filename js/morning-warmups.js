@@ -94,3 +94,11 @@ function quotient(x, y) {
 
 console.log(quotient(5, "1"));
 console.log(quotient(5, 1));
+
+function fiveArray(X) {
+    console.log(fiveArray(x[0]));
+    console.log(fiveArray(x[1]));
+    console.log(fiveArray(x[2]));
+    console.log(fiveArray(x[3]));
+    console.log(fiveArray(x[4]));
+}
