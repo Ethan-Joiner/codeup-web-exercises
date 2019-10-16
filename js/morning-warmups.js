@@ -69,11 +69,11 @@ function overFive() {
 
 console.log(overFive());
 
-function helloStranger(x = "stranger") {
-    return "Hello there, " + x + "."
-}
-var prompted = prompt("Input a name");
-alert(helloStranger());
+// function helloStranger(x = "stranger") {
+//     return "Hello there, " + x + "."
+// }
+// var prompted = prompt("Input a name");
+// alert(helloStranger());
 
 
 // Write a function that accepts an array and returns the length of that array
@@ -83,3 +83,26 @@ function lengthOfArray(x) {
 
 console.log(lengthOfArray([1, 2, 3, 4]));
 console.log(lengthOfArray([2, 1, 6, 3, 4]));
+
+function quotient(x, y) {
+    if (typeof x === "number" && typeof y === "number") {
+        return (x / y);
+    } else {
+        return false;
+    }
+}
+
+console.log(quotient(5, "1"));
+console.log(quotient(5, 1));
+
+
+// Function that accepts an array that has a length of 5 and console log each element
+function fiveArray(x) {
+    console.log(x[0]);
+    console.log(x[1]);
+    console.log(x[2]);
+    console.log(x[3]);
+    console.log(x[4]);
+}
+
+console.log(fiveArray([1, 2, 3, 4, 5]));
