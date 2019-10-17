@@ -111,7 +111,7 @@ function isStringEight(x) {
     return (typeof x === "string" && x.length >= 8);
 }
 
-console.log(isStringEight(true));
-console.log(isStringEight("fetch"));
+console.log(isStringEight(null));
+console.log(isStringEight(NaN));
 console.log(isStringEight("diphtheria"));
 console.log(isStringEight(500000000));
