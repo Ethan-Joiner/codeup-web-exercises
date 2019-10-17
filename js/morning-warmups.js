@@ -106,3 +106,12 @@ function fiveArray(x) {
 }
 
 console.log(fiveArray([1, 2, 3, 4, 5]));
+
+function isStringEight(x) {
+    return (typeof x === "string" && x.length >= 8);
+}
+
+console.log(isStringEight(true));
+console.log(isStringEight("fetch"));
+console.log(isStringEight("diphtheria"));
+console.log(isStringEight(500000000));
