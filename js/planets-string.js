@@ -41,6 +41,6 @@ var listring = planetsArray.join("</li><li>");
 
 
 
-    // "<ul> <li>" + xxxxx + "</li> </ul>"
+
 
 })();
