@@ -259,8 +259,8 @@ var chooseYourFighter = [
     ];
 
 chooseYourFighter.forEach(function(fighter){
-    console.log(fighter.name.firstName + ":" + fighter.catchPhrase());
-    console.log(fighter.name.firstName + "'s attacks are ");
+    console.log(fighter.name.firstName + ": " + fighter.catchPhrase());
+    console.log(fighter.name.firstName + "'s attacks are: ");
     fighter.attacks.forEach(function(attack){
         console.log(attack);
     });
