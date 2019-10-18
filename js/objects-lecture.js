@@ -156,26 +156,35 @@ myPhone.call = function(){
     console.log("Dialing...")
 };
 
-console.log(myPhone);
+console.log(myPhone.call);
 
 /**
  * TO DO: Let's add functionality to our Mac Object. Create a method named
  * 'powerOn'. When called, this should display a console message that says
  * "Powering on..."
  */
+myMac.powerOn = function(){
+    console.log("Powering on...")
+};
 
+console.log(myMac.powerOn());
 /**
  * TO DO TOGETHER: Let's add one more piece of functionality. Create a
  * method on the phone object that returns a message displaying the user's
  * firstName and lastName. Hint: use the 'this' keyword.
  */
 
+myPhone.currentUser = function(){
+    console.log("Current user" + this.name.firstname + "" + this.name.lastname)
+};
 /**
  * TO DO: One last thing. Let's add a 'currentUser' method that displays the
  * Mac user's 'username' and 'email'. Use the 'this' keyword to reference
  * the properties we created earlier.
  */
-
+myMac.currentUser = function(){
+    console.log("Current user is " + this.login.username + " and the email is " + this.login.email)
+};
 
 /*********************************************
  *                  NESTED VALUES
@@ -200,3 +209,61 @@ console.log(myPhone);
  * Object element and pull the properties and methods that we need.
  */
 
+
+var chooseYourFighter = [
+    {
+        name: {
+            firstName: "Spongebob",
+            lastName: "Squarepants"
+        },
+        weapon: "Spatula",
+        attacks: ["Karate", "Bubbleblowing", "Jellyfishing"],
+        catchPhrase: function (){
+            return "I'm ready";
+        }
+    },
+    {
+        name: {
+            firstName: "Patrick",
+            lastName: "Star"
+        },
+        weapon: "Mayo",
+        attacks: ["Rock hiding", "Secret Photo", "Wombology"],
+        catchPhrase: function(){
+            return "Hey spongebob";
+        }
+    },
+    {
+        name: {
+            firstName: "Eugene",
+            lastName: "Crabs"
+        },
+        weapon: "Karate",
+        attacks: ["Take Money", "Tiny Violen", "Dance"],
+        catchPhrase: function(){
+            return "Money";
+        }
+
+    },
+    {
+        name: {
+            firstName: "Squidward",
+            lastName: "Tentacles"
+        },
+        weapon: "Clarinet",
+        attacks: ["Bad music", "Nag", "SQUILLIAM"],
+        catchPhrase: function(){
+            return "*nasal noise*";
+        }
+    }
+    ];
+
+chooseYourFighter.forEach(function(fighter){
+    console.log(fighter.name.firstName + ":" + fighter.catchPhrase());
+    console.log(fighter.name.firstName + "'s attacks are ");
+    fighter.attacks.forEach(function(attack){
+        console.log(attack);
+    });
+    console.log("---------");
+
+});
