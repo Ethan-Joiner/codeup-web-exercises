@@ -33,3 +33,31 @@ console.log(getOlder([
     }
 ]));
 
+function washCars(x) {
+    x.forEach(function(car) {
+        car.isDirty = false
+    });
+    return x
+}
+
+console.log(washCars([
+    {
+        make: 'Volvo',
+        color: 'red',
+        year: 1996,
+        isDirty: true
+    },
+    {
+        make: 'Toyota',
+        color: 'black',
+        year: 2004,
+        isDirty: false
+    },
+    {
+        make: 'Ford',
+        color: 'white',
+        year: 2007,
+        isDirty: true
+    }
+]));
+
