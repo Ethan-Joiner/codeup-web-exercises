@@ -115,3 +115,11 @@ console.log(isStringEight(true));
 console.log(isStringEight("fetch"));
 console.log(isStringEight("diphtheria"));
 console.log(isStringEight(500000000));
+
+
+function count(x) {
+    for (i = 1; i <= x; i++) {
+        console.log(i)
+    }
+}
+count(20);
