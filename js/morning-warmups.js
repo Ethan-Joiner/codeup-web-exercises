@@ -111,10 +111,11 @@ function isStringEight(x) {
     return (typeof x === "string" && x.length >= 8);
 }
 
-console.log(isStringEight(true));
-console.log(isStringEight("fetch"));
+console.log(isStringEight(null));
+console.log(isStringEight(NaN));
 console.log(isStringEight("diphtheria"));
 console.log(isStringEight(500000000));
+
 
 
 function count(x) {
@@ -123,3 +124,14 @@ function count(x) {
     }
 }
 count(20);
+
+function roundedDown(x) {
+    if (typeof parseFloat(x) === "number" && !isNaN(x)) {
+        return Math.floor(x);
+    } else {
+        return false;
+    }
+}
+
+console.log(roundedDown(3.14));
+
