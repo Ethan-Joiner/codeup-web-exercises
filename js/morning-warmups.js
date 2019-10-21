@@ -116,6 +116,15 @@ console.log(isStringEight(NaN));
 console.log(isStringEight("diphtheria"));
 console.log(isStringEight(500000000));
 
+
+
+function count(x) {
+    for (i = 1; i <= x; i++) {
+        console.log(i)
+    }
+}
+count(20);
+
 function roundedDown(x) {
     if (typeof parseFloat(x) === "number" && !isNaN(x)) {
         return Math.floor(x);
@@ -125,3 +134,4 @@ function roundedDown(x) {
 }
 
 console.log(roundedDown(3.14));
+
