@@ -62,10 +62,10 @@ console.log(washCars([
 ]));
 
 function adminList(x) {
-    var adminsArray;
+    var adminsArray = [];
     x.forEach(function(user) {
         if (user.isAdmin === true) {
-            adminsArray += user.email;
+            adminsArray += user.email + "\n"
         }
     });
     return adminsArray;
