@@ -33,11 +33,25 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/navigation-preview-night-v2',
-        zoom: 15,
+        zoom: 18,
     });
     geocode("241 E NASA Pkwy, Webster, TX, 77598", mapboxToken).then(function(result) {
         console.log(result);
         map.setCenter(result);
+
+        var marker = new mapboxgl.Marker()
+            .setLngLat(result)
+            .addTo(map);
+
+        var popUp = new mapboxgl.Popup()
+            .setHTML("<p>Nobi Public House</p>")
+            .addTo(map);
+
+        marker.setPopup(popUp);
+
+
+
+
     });
 
 
