@@ -135,3 +135,14 @@ function roundedDown(x) {
 
 console.log(roundedDown(3.14));
 
+
+function createPersonObject(x, y) {
+    var personObject = {
+        name: x,
+        age: y
+    };
+    return personObject
+}
+
+console.log(createPersonObject("ethan", 29));
+
