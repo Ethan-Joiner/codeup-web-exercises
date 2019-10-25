@@ -171,3 +171,4 @@ function return5(x) {
 console.log(return5(true));
 console.log(return5(5));
 console.log(return5("five"));
+
