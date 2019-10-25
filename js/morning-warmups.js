@@ -161,3 +161,13 @@ function fizzbuzz() {
 }
 
 fizzbuzz();
+
+function return5(x) {
+    if (x === "five") {
+        return 5;
+    }
+}
+
+console.log(return5(true));
+console.log(return5(5));
+console.log(return5("five"));
