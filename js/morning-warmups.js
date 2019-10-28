@@ -172,3 +172,39 @@ console.log(return5(true));
 console.log(return5(5));
 console.log(return5("five"));
 
+var shoppingCarts = [
+    {
+        apples: 8,
+        bananas: 2,
+        oranges: 4,
+        grapes: 24
+    }, {
+        apples: 3,
+        bananas: 6,
+        oranges: 8,
+        grapes: 12
+    } , {
+        apples: 0,
+        bananas: 12,
+        oranges: 0,
+        grapes: 0
+    } , {
+        apples: 4,
+        bananas: 0,
+        oranges: 12,
+        grapes: 10
+    }
+];
+ var mostOranges = function(carts) {
+     var mostCart = carts[0];
+     carts.forEach(function(cart) {
+         if (cart.oranges > mostCart.oranges) {
+             mostCart = cart;
+         }
+     });
+         return mostCart
+ };
+console.log(mostOranges(shoppingCarts));
+
+
+
