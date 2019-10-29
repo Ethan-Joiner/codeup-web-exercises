@@ -104,3 +104,7 @@ $(document).ready(function() {
 
 
 });
+
+$('#codeup').hover(function() {
+	alert('h1 with id "codeup" was hovered');
+});
