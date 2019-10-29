@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Exercises</title>
+</head>
+<body>
+<h1 id="main-header">This is my h1</h1>
+<p id="content">This is my paragraph</p>
+<ul id="list">
+    <li class="codeup">This is the first unordered list item</li>
+    <li id="codeup">This is the second unordered list item</li>
+    <li class="codeup">This is the third unordered list item</li>
+</ul>
+<div id="paladin">Simply divine</div>
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    $(document).ready(function() {
+
+      $("li").css("font-size", "20px");
+      $("h1, p, li").css("background-color", "yellow");
+        alert($("h1").html())
+    });
+</script>
+</body>
+</html>
