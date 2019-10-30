@@ -243,10 +243,10 @@ var hamsters = [
 ];
 
 function hamsterSort(x) {
-   return x.sort((a,b) => a.heightInMM - b.heightInMM)
+   return x.sort((a , b) => a.heightInMM - b.heightInMM)
 }
 
-console.log(hamsterSort());
+console.log(hamsterSort(hamsters));
 
 
 
