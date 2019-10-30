@@ -5,11 +5,12 @@
 </head>
 <body>
 <h1>Konami Code</h1>
+<h3 id="entry"></h3>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
-
+    var pressDisplay = '';
     $(document).ready(function() {
             var array = [];
             var pressed = '';
@@ -17,10 +18,34 @@
             var correctCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'a', 'b', 'Enter'];
         $(document).keyup(function (event) {
                  pressed = event.key;
+                switch(pressed) {
+                    case pressed === 'ArrowUp':
+                        pressDisplay = 'Up';
+                        break;
+                    case pressed === 'ArrowDown':
+                        pressDisplay = 'Down';
+                        break;
+                    case pressed === 'ArrowLeft':
+                        pressDisplay = 'Left';
+                        break;
+                    case pressed === 'ArrowRight':
+                        pressDisplay = 'Right';
+                        break;
+                    case pressed === 'a':
+                        pressDisplay = 'A';
+                        break;
+                    case pressed === 'b':
+                        pressDisplay = 'B';
+                        break;
+                    case pressed ==='Enter':
+                        pressDisplay = 'Start'
+                }
                 if (pressed === correctCode[i]) {
                     array.push(pressed);
                     if (array[i] === correctCode[i]) {
                     console.log('Correct Entry');
+                        console.log(pressDisplay);
+                    $("#entry").html(pressDisplay);
                     i++
                     }
                 } else {
@@ -28,10 +53,10 @@
                     array = [];
                     i = 0
                 }
-            console.log(array);
-            console.log(correctCode)
+            // console.log(array);
+            // console.log(correctCode)
                 if (array.length === correctCode.length) {
-                    alert('Someone set up us the bomb! +30 lives')
+                    alert('Someone set up us the bomb! You have added 30 lives!')
                 }
         });
 
