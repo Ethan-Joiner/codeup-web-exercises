@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function() {
+            var array = [];
+            var pressed = '';
+            var i = 0;
+            var correctCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'a', 'b', 'Enter'];
+        $(document).keyup(function (event) {
+                 pressed = event.key;
+                if (pressed === correctCode[i]) {
+                    array.push(pressed);
+                    if (array[i] === correctCode[i]) {
+                    console.log('Correct Entry');
+                    i++
+                    }
+                } else {
+                    console.log('All your base are belong to us');
+                    array = [];
+                    i = 0
+                }
+            console.log(array);
+            console.log(correctCode)
+                if (array.length === correctCode.length) {
+                    alert('Someone set up us the bomb! +30 lives')
+                }
+        });
+
+    })
+</script>
+</body>
+</html>
