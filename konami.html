@@ -7,56 +7,71 @@
 <h1>Konami Code</h1>
 <h3 id="entry"></h3>
 
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
+    var failAudio = new Audio ("audio/failure.mp3");
+    var successAudio = new Audio ("sounds/Alarm.wav");
     var pressDisplay = '';
     $(document).ready(function() {
-            var array = [];
+            var cheatArray = [];
+            var displayArray = [];
             var pressed = '';
             var i = 0;
             var correctCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'a', 'b', 'Enter'];
         $(document).keyup(function (event) {
                  pressed = event.key;
                 switch(pressed) {
-                    case pressed === 'ArrowUp':
+                    case 'ArrowUp':
                         pressDisplay = 'Up';
                         break;
-                    case pressed === 'ArrowDown':
+                    case 'ArrowDown':
                         pressDisplay = 'Down';
                         break;
-                    case pressed === 'ArrowLeft':
+                    case 'ArrowLeft':
                         pressDisplay = 'Left';
                         break;
-                    case pressed === 'ArrowRight':
+                    case 'ArrowRight':
                         pressDisplay = 'Right';
                         break;
-                    case pressed === 'a':
+                    case 'a':
                         pressDisplay = 'A';
                         break;
-                    case pressed === 'b':
+                    case 'b':
                         pressDisplay = 'B';
                         break;
-                    case pressed ==='Enter':
-                        pressDisplay = 'Start'
+                    case 'Enter':
+                        pressDisplay = 'Start';
                 }
                 if (pressed === correctCode[i]) {
-                    array.push(pressed);
-                    if (array[i] === correctCode[i]) {
+                    cheatArray.push(pressed);
+                    displayArray.push(pressDisplay + " ");
+                    if (cheatArray[i] === correctCode[i]) {
                     console.log('Correct Entry');
                         console.log(pressDisplay);
-                    $("#entry").html(pressDisplay);
+                    $("#entry").html(displayArray);
                     i++
                     }
                 } else {
                     console.log('All your base are belong to us');
-                    array = [];
-                    i = 0
+                    cheatArray = [];
+                    displayArray= [];
+                    pressed = '';
+                    i = 0;
+                    $("#entry").html("<img src='img/allyourbase.png' alt='allyourbase'><br><h5>Incorrect cheat input</h5>");
+                    failAudio.play();
                 }
             // console.log(array);
             // console.log(correctCode)
-                if (array.length === correctCode.length) {
-                    alert('Someone set up us the bomb! You have added 30 lives!')
+                if (cheatArray.length === correctCode.length) {
+                    // alert('Somebody set up us the bomb! You have added 30 lives!');
+                    displayArray = [];
+                    cheatArray = [];
+                    i = 0;
+                    $("#entry").html("<img src=\"img/slimer.gif\" alt=\"slimer\"><br><h5>Cheat code activated</h5>");
+                    successAudio.pause();
+                    successAudio.play();
                 }
         });
 
