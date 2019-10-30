@@ -25,13 +25,27 @@
       // $("h1, p, li").css("background-color", "yellow");
       //   alert($("h1").html())
         $("h1").click(function() {$(this).css('background-color', "blue")});
-        $("p").dblclick(function() {$(this).css('font-size', "18px")})
+        $("p").dblclick(function() {$(this).css('font-size', "18px")});
         $("li").hover(
             function() {
-                $(this).css("color", "red")
+                 var ran = Math.floor(Math.random() * 60) + 1;
+                 var array = $(this).html().split(" ");
+                console.log(array);
+                // array.forEach(function(word, i) {
+                //     word[i] = word[ranPosition]
+                // });
+                 var ranPosition = Math.floor(Math.random() * 6);
+                // for (var i = 0; i < array.length -1; i++) {
+                //
+                // }
+                $(this).html(array[ranPosition] + array[ranPosition] + array[ranPosition] + array[ranPosition] + array[ranPosition] + array[ranPosition] + array[ranPosition])
+                $(this).css("color", "red");
+                $(this).css("font-size", ran + "px")
             },
             function() {
-                $(this).css("color", "black")
+                var ran = Math.floor(Math.random() * 60) + 1;
+                $(this).css("color", "black");
+                $(this).css("font-size", ran + "px")
             }
         )
     });
