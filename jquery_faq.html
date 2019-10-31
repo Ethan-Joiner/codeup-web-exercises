@@ -66,17 +66,13 @@
     $(document).ready(function() {
 
 
-        // $('dd').addClass('invisible');
-
-        $('.invisible').css('visibility', 'hidden');
-
-        $('body').append('<p>Toggler</p>');
+        $('h1').append('<p>Toggler</p>');
 
         $('p').addClass('toggle');
 
         $('.toggle').click(function () {
             $('dd').toggleClass('invisible');
-        })
+        });
 
         $('dt').click(function() {
             $(this).toggleClass('highlighted')
