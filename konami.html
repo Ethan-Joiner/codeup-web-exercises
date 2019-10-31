@@ -11,8 +11,8 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
+    var goodAudio = new Audio ("sounds/success.mp3");
     var failAudio = new Audio ("audio/failure.mp3");
-    var successAudio = new Audio ("sounds/Alarm.wav");
     var pressDisplay = '';
     $(document).ready(function() {
             var cheatArray = [];
@@ -65,13 +65,13 @@
             // console.log(array);
             // console.log(correctCode)
                 if (cheatArray.length === correctCode.length) {
-                    // alert('Somebody set up us the bomb! You have added 30 lives!');
+                    alert('Somebody set up us the bomb! You have added 30 lives!');
+                    goodAudio.play();
                     displayArray = [];
                     cheatArray = [];
                     i = 0;
                     $("#entry").html("<img src=\"img/slimer.gif\" alt=\"slimer\"><br><h5>Cheat code activated</h5>");
-                    successAudio.pause();
-                    successAudio.play();
+                    // successAudio.pause();
                 }
         });
 
