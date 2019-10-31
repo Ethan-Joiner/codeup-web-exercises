@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox API Exercise</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+<div id='map'></div>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script>
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/navigation-preview-night-v2',
+        zoom: 13,
+    });
+    geocode("Webster, TX, 77598", mapboxToken).then(function(websterResult) {
+        map.setCenter(websterResult)
+    });
+    // var nobi = geocode("241 E NASA Pkwy, Webster, TX, 77598", mapboxToken).then(function(nobiResult) {
+    //     console.log(nobiResult);
+    //     var nobipopUp = new mapboxgl.Popup()
+    //         .setHTML("<h2>Nobi Public House</h2><br><p>Craft Beer Pub With Vietnamese Fusion Eats</p>")
+    //         .addTo(map);
+    //
+    //     var nobiMarker = new mapboxgl.Marker()
+    //         .setLngLat(nobiResult)
+    //         .setPopup(nobipopUp)
+    //         .addTo(map);
+    // });
+    // var boons = geocode("4106 E NASA Pkwy, El Lago, TX, 77586", mapboxToken).then(function(boonsResult) {
+    //     var boonspopUp = new mapboxgl.Popup()
+    //         .setHTML("<h2>Boondoggles Pub</h2><br><p>Local Pub With Dog Friendly Patio</p>")
+    //         .addTo(map);
+    //
+    //     var boonsMarker = new mapboxgl.Marker()
+    //         .setLngLat(boonsResult)
+    //         .setPopup(boonspopUp)
+    //         .addTo(map);
+    // });
+    // var india = geocode("505 E NASA Pkwy, Webster, TX, 77598", mapboxToken).then(function(indiaResult) {
+    //     var indiapopUp = new mapboxgl.Popup()
+    //         .setHTML("<h2>Noon Mirch: Cuisine of India</h2><p>Indian Restaurant With Spectacular Lunch Buffet</p>")
+    //         .addTo(map);
+    //
+    //     var indiaMarker = new mapboxgl.Marker()
+    //         .setLngLat(indiaResult)
+    //         .setPopup(indiapopUp)
+    //         .addTo(map);
+    // });
+
+    var restaurants = [
+    {
+        name: "<h2>Nobi Public House</h2><br><p>Craft Beer Pub With Vietnamese Fusion Eats</p>",
+        address: "241 E NASA Pkwy, Webster, TX, 77598"
+    },
+    {
+        name: "<h2>Boondoggles Pub</h2><br><p>Local Pub With Dog Friendly Patio</p>",
+        address: "4106 E NASA Pkwy, El Lago, TX, 77586"
+    },
+    {
+        name: "<h2>Noon Mirch: Cuisine of India</h2><p>Indian Restaurant With Spectacular Lunch Buffet</p>",
+        address: "505 E NASA Pkwy, Webster, TX, 77598"
+    }
+
+    ];
+
+    restaurants.forEach(function(restaurant) {
+        geocode(restaurant.address, mapboxToken).then(function(result) {
+            var popUp = new mapboxgl.Popup()
+                .setHTML(restaurant.name)
+                .addTo(map);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .setPopup(popUp)
+                .addTo(map);
+            console.log(restaurant);
+        });
+        // return restaurants;
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
