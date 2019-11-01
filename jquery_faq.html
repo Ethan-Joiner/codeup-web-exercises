@@ -10,6 +10,12 @@
         .highlighted {
             background-color: yellow;
         }
+        .bold {
+            font-weight: bold;
+        }
+        .blue {
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +66,30 @@
     <dd>You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
 </dl>
 
+<h3>First Park</h3>
+<ul>
+    <li>Fact 1</li>
+    <li>Fact 2</li>
+    <li>Fact 3</li>
+    <li>Fact 4</li>
+</ul>
+
+<h3>Second Park</h3>
+<ul>
+    <li>Fact 1</li>
+    <li>Fact 2</li>
+    <li>Fact 3</li>
+    <li>Fact 4</li>
+</ul>
+
+<h3>Third Park</h3>
+<ul>
+    <li>Fact 1</li>
+    <li>Fact 2</li>
+    <li>Fact 3</li>
+    <li>Fact 4</li>
+</ul>
+<button>Don't touch me</button>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
@@ -76,6 +106,22 @@
 
         $('dt').click(function() {
             $(this).toggleClass('highlighted')
+        });
+
+        $('button').click(function() {
+            $(this).html('I specifically asked for the opposite of this.');
+            $('ul').each(function() {
+                $(this).children().last().toggleClass('highlighted')
+
+            })
+        });
+
+        $('h3').click(function() {
+            $(this).next().children().toggleClass('bold')
+        });
+
+        $('li').click(function() {
+            $(this).parent().children().first().toggleClass('blue')
         })
     })
 </script>
