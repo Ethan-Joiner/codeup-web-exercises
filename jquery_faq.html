@@ -109,8 +109,10 @@
         });
 
         $('button').click(function() {
+            $(this).html('I specifically asked for the opposite of this.');
             $('ul').each(function() {
                 $(this).children().last().toggleClass('highlighted')
+
             })
         });
 

@@ -248,6 +248,10 @@ function hamsterSort(x) {
 
 console.log(hamsterSort(hamsters));
 
+//Pandora. Good to listen to music.
+//f.lux allows me to waste away in front of a computer without ruining my sleep and eyes
+//yelp is neat to read people incorrectly describe their experience
+
 
 
 
