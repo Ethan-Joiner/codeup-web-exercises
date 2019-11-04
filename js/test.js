@@ -38,7 +38,19 @@ $(document).ready(function() {
 //                     Why are you shaking?
 //                         Are you okay? Wakeup!";
 
-var test = "This\
-    is a test.";
-
-console.log(test)
+var test = "This is a test.";
+var test2 = ""
+function fade() {
+    for (var i = 0; i < test.length - 1; i++) {
+        $('body').hide().append(test[i]).fadeIn(400);
+console.log(test[i])
+    }
+}
+fade();
+// setTimeout(fade, 200)
+// function fadeLetter(i) {
+//     setTimeout(function () {
+//         $('body').hide().html(test2 + test[i]).fadeIn(200);
+//     }, 200)
+// }
+console.log(test);
