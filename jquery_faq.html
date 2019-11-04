@@ -19,6 +19,10 @@
     </style>
 </head>
 <body>
+<div>
+    <h1>Would you like to sign up with our newsletter? <span>x</span></h1>
+
+</div>
 <h1>FAQ's about National Parks</h1>
 <dl>
     <dt>Who is the director of the National Park Service?</dt>
@@ -117,12 +121,26 @@
         });
 
         $('h3').click(function() {
-            $(this).next().children().toggleClass('bold')
+            $(this).next().children().toggleClass('bold');
+            $(this).next().slideToggle();
         });
 
         $('li').click(function() {
             $(this).parent().children().first().toggleClass('blue')
-        })
+        });
+
+        $('span').click(function() {
+            $(this).parent().toggle()
+        });
+
+        $('ul').hide();
+
+        function fade() {
+            $('body').hide().html("<h2>Please Register To Continue</h2>").fadeIn()
+        }
+
+        setTimeout(fade, 8000)
+
     })
 </script>
 </body>
