@@ -39,15 +39,21 @@ $(document).ready(function() {
 //                         Are you okay? Wakeup!";
 
 var test = "This is a test.";
-var test2 = ""
+var test2 = 0;
+// function fade() {
+//     for (var i = 0; i < test.length - 1; i++) {
+//         $('body').hide().append(test[i]).fadeIn(400);
+// console.log(test[i])
+//     }
+// }
+// fade();
 function fade() {
-    for (var i = 0; i < test.length - 1; i++) {
-        $('body').hide().append(test[i]).fadeIn(400);
-console.log(test[i])
-    }
+    $('body').append(test[test2]).fadeIn(200);
+    test2++;
+    console.log(test2)
 }
-fade();
-// setTimeout(fade, 200)
+
+setInterval(fade, 200);
 // function fadeLetter(i) {
 //     setTimeout(function () {
 //         $('body').hide().html(test2 + test[i]).fadeIn(200);
