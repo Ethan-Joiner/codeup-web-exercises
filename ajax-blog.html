@@ -39,17 +39,23 @@
                 })
             })
      }
-     loadPosts()
+     loadPosts();
 
      $('#addPost').click(function() {
          var newTitle = $('#newTitle').val();
          var newPost = $('#newPost').val();
          var category = $('#category').val();
          var today = new Date();
-         $('#posts').append('<div class="card">' + '<div class="card-header">' + newTitle + '</div>' + '<div class="card-body">' + '<blockquote class="blockquote mb-0">' +
+         $('#posts').append('<div class="card">' + '<div class="card-header">' + newTitle + '<button id="delete" class="badge badge-danger float-right">Delete</button>' + '</div>' + '<div class="card-body">' + '<blockquote class="blockquote mb-0">' +
              '<p>' + newPost + '</p>' + '<br>' + '<p>Date: ' + today + '<footer class="blockquote-footer">' + 'Categories: ' + category + '</footer>' + '</blockquote></div></div>')
+         $('#delete').click(function() {
+             console.log($(this).parent().parent());
+             $(this).parent().parent().hide()
+         })
 
-     })
+     });
+
+
 
 
 
