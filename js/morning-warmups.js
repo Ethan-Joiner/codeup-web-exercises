@@ -271,4 +271,16 @@ function returnString(x) {
 console.log(returnString(5));
 console.log(returnString('four'));
 
+var words = {
+    gratitude: "Thank you"
+};
 
+function manners(x) {
+    if (x.gratitude === "Thank you") {
+        return "You're welcome"
+    } else {
+        return "How rude"
+    }
+}
+
+console.log(manners(words));
