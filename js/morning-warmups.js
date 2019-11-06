@@ -67,7 +67,7 @@ function overFive() {
     return number > 5;
 }
 
-console.log(overFive());
+// console.log(overFive());
 
 // function helloStranger(x = "stranger") {
 //     return "Hello there, " + x + "."
@@ -160,7 +160,7 @@ function fizzbuzz() {
     }
 }
 
-fizzbuzz();
+// fizzbuzz();
 
 function return5(x) {
     if (x === "five") {
@@ -284,3 +284,15 @@ function manners(x) {
 }
 
 console.log(manners(words));
+
+function randomBoolean() {
+    var random = Math.floor(Math.random() * 2) +1;
+    console.log(random)
+    if (random === 1) {
+        return true
+    } else if (random === 2) {
+        return false
+    }
+}
+
+console.log(randomBoolean());
