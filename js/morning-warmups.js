@@ -287,12 +287,7 @@ console.log(manners(words));
 
 function randomBoolean() {
     var random = Math.floor(Math.random() * 2) +1;
-    console.log(random)
-    if (random === 1) {
-        return true
-    } else if (random === 2) {
-        return false
-    }
+    return (random === 1)
 }
 
 console.log(randomBoolean());
