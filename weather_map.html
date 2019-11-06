@@ -17,6 +17,7 @@
 <div class="jumbotron">My Weather Map</div>
 <div class="container">
     <div id="insertWeather"></div>
+    <div class="row">
 
 
 </div>
@@ -33,12 +34,11 @@
     "use strict";
 
     var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
-    console.log(weather);
 
     weather.done(function(data) {
         console.log(data.daily.data[0]);
-        $('#insertWeather').append('<div class="row">' + '<div class="col-4">' + '<div class="card">' +
-            '<div class="card-body">'  + data.daily.data[0].temperatureHigh + "/" + data.daily.data[0].temperatureLow)
+        $('#insertWeather').append('<div class="col-4">' + '<div class="card">' +
+            '<div class="card-body">'  + data.daily.data[0].temperatureHigh + "/" + data.daily.data[0].temperatureLow + '<p>' + data.daily.data[0].summary + '</p>')
     })
 
 
