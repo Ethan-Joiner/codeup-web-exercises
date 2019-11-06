@@ -9,7 +9,7 @@
         #map {
             /* the width and height may be set to any size */
             width: 100%;
-            height: 700px;
+            height: 300px;
         }
         ul {
             padding: 0;
@@ -23,6 +23,9 @@
             flex-direction: column;
             justify-content: space-evenly;
         }
+        .row {
+            margin-bottom: 2em;
+        }
 
     </style>
 </head>
@@ -30,6 +33,14 @@
 <div class="jumbotron">My Weather Map</div>
 <div class="container-fluid">
     <div id="insertWeather" class="row"></div>
+<!--    <div class="input-group">-->
+<!--        <div class="input-group-prepend">-->
+<!--            <span class="input-group-text">Latitude/Longitude</span>-->
+<!--        </div>-->
+<!--        <input type="text" aria-label="First name" class="form-control" id="latitude">-->
+<!--        <input type="text" aria-label="Last name" class="form-control" id="longitude">-->
+<!--        <button id="latLonSearch">Click Here to Check Weather</button>-->
+<!--    </div>-->
 
 
 
@@ -43,11 +54,12 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     "use strict";
 
+    //Variables for Dark Sky
     var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + "/29.4241,-98.4936");
-
 
     var conditions = [{
         "clear-day": '<img src="icons/Sun.svg" alt="sun">'}, {
@@ -63,29 +75,102 @@
     }
     ];
     //This function creates the weather cards
-    weather.done(function(data) {
-        console.log(data.daily.data[0]);
-        for (var i = 0; i < 3; i++) {
-            var condition;
-            switch(data.daily.data[i].icon) {
-                case "clear-day": condition = conditions[0]["clear-day"]; break;
-                case "clear-night": condition = conditions[1]["clear-night"]; break;
-                case "rain": condition = conditions[2]["rain"];break;
-                case "snow": condition = conditions[3]["snow"]; break;
-                case "sleet": condition = conditions[4]["sleet"]; break;
-                case "wind": condition = conditions[5]["wind"]; break;
-                case "fog": condition = conditions[6]["fog"]; break;
-                case "cloudy": condition = conditions[7]["cloudy"];break;
-                case "partly-cloudy-day": condition = conditions[8]["partly-cloudy-day"]; break;
-                case "partly-cloudy-night": condition = conditions[9]["partly-cloudy-night"];break;
-                default: condition = '<img src="icons/Sun-Low.svg" alt="default">'
-
+    function createWeather() {
+        weather.done(function (data) {
+        $('#insertWeather').html("");
+            console.log(data.daily.data[0]);
+            for (var i = 0; i < 3; i++) {
+                var condition;
+                switch (data.daily.data[i].icon) {
+                    case "clear-day":
+                        condition = conditions[0]["clear-day"];
+                        break;
+                    case "clear-night":
+                        condition = conditions[1]["clear-night"];
+                        break;
+                    case "rain":
+                        condition = conditions[2]["rain"];
+                        break;
+                    case "snow":
+                        condition = conditions[3]["snow"];
+                        break;
+                    case "sleet":
+                        condition = conditions[4]["sleet"];
+                        break;
+                    case "wind":
+                        condition = conditions[5]["wind"];
+                        break;
+                    case "fog":
+                        condition = conditions[6]["fog"];
+                        break;
+                    case "cloudy":
+                        condition = conditions[7]["cloudy"];
+                        break;
+                    case "partly-cloudy-day":
+                        condition = conditions[8]["partly-cloudy-day"];
+                        break;
+                    case "partly-cloudy-night":
+                        condition = conditions[9]["partly-cloudy-night"];
+                        break;
+                    default:
+                        condition = '<img src="icons/Sun-Low.svg" alt="default">'
+                }
+                $('#insertWeather').append('<div class="col-4">' + '<div class="card">' +
+                    '<div class="card-body m-0">' + '<ul class="text-center flex m-0" style="list-style: none"><li>' + Math.round(data.daily.data[i].temperatureHigh) + "° / " + Math.round(data.daily.data[i].temperatureLow) + '°' + '</li><li>' + condition + '</li><li>' + data.daily.data[i].summary + '</li><li>' + '<strong>Humidity: </strong>' + data.daily.data[i].humidity * 100 + '</li><li><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</li><li><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</li></ul>')
             }
 
-            $('#insertWeather').append('<div class="col-4">' + '<div class="card">' +
-            '<div class="card-body m-0">' + '<ul class="text-center flex m-0" style="list-style: none"><li>' + Math.round(data.daily.data[i].temperatureHigh) + "° / " + Math.round(data.daily.data[i].temperatureLow) + '°' + '</li><li>' + condition + '</li><li>' + data.daily.data[i].summary + '</li><li>' + '<strong>Humidity: </strong>' + data.daily.data[i].humidity * 100 + '</li><li><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</li><li><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</li></ul>')
-        }
+        });
+    }
+    createWeather();
+
+    $('#latLonSearch').click(function() {
+        var latitude = $('latitude').val();
+        var longitude = $('longitude').val();
+        weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + '/' + latitude + ',' + longitude);
+        console.log(weather);
+        createWeather();
+    });
+
+
+    // Create Map  | MAPBOX Variables
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/navigation-preview-night-v2',
+        zoom: 3,
+    });
+
+    var markerOptions = {
+    draggable: true
+    };
+    var marker = new mapboxgl.Marker(markerOptions);
+    var newLngLat;
+    //Creates initial marker
+    geocode("San Antonio, TX", mapboxToken).then(function(sanAnResult) {
+        map.setCenter(sanAnResult);
+        marker = marker
+        .setLngLat(sanAnResult)
+        .addTo(map);
+    });
+
+    function updateMarker() {
+
+        var newLngLat = marker.getLngLat();
+        console.log(newLngLat);
+        map.setCenter(newLngLat);
+        reverseGeocode(newLngLat, mapboxToken).then(function(dragResult) {
+            console.log(dragResult);
+            var latitude = newLngLat.lat;
+            var longitude = newLngLat.lng;
+            weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + '/' + latitude + ',' + longitude);
+            createWeather()
     })
+    }
+    marker.on('dragend', updateMarker);
+
+
+
+
 
 
 
