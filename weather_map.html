@@ -29,11 +29,29 @@
         #location {
             margin-bottom: 1em;
         }
+        #jumboImg {
+            height: 100%;
+            width: 100%
+        }
+        .jumbotron {
+            height: 200px;
+            padding: 0;
+        }
+        #title {
+            color: white;
+            font-size: 2em;
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+      
 
     </style>
 </head>
 <body>
-<div class="jumbotron">My Weather Map</div>
+<div class="jumbotron"><span id="title">My Weather Map</span><img src="img/extremeweather.jpg" alt="headerImage" id="jumboImg">
+</div>
 <div class="container-fluid">
     <div id="insertWeather" class="row"></div>
     <div id="location"></div>
@@ -148,12 +166,15 @@
     var marker = new mapboxgl.Marker(markerOptions);
     var newLngLat;
     //Creates initial marker
-    geocode("San Antonio, TX", mapboxToken).then(function(sanAnResult) {
-        map.setCenter(sanAnResult);
-        marker = marker
-        .setLngLat(sanAnResult)
-        .addTo(map);
-    });
+
+        geocode("San Antonio, TX", mapboxToken).then(function(sanAnResult) {
+            map.setCenter(sanAnResult);
+            marker = marker
+                .setLngLat(sanAnResult)
+                .addTo(map);
+        });
+
+    //This Updates the Marker and Weather
 
     function updateMarker() {
 
@@ -171,6 +192,8 @@
     })
     }
     marker.on('dragend', updateMarker);
+
+    //This enables you to search in the input field
 
     $('button').click(function() {
         var address = $('.form-control').val();
