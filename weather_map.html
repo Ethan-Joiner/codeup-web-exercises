@@ -36,6 +36,7 @@
         .jumbotron {
             height: 200px;
             padding: 0;
+            margin: 0;
         }
         #title {
             color: white;
@@ -44,6 +45,18 @@
             top: 15%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+        #location {
+            color: whitesmoke;
+        }
+        .container-fluid {
+            background-color: black;
+        }
+        .card {
+            background-color: #1C2E3B;
+        }
+        li {
+            color: wheat;
         }
       
 
@@ -55,7 +68,7 @@
 <div class="container-fluid">
     <div id="insertWeather" class="row"></div>
     <div id="location"></div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-0">
   <div class="input-group-prepend">
     <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
   </div>
@@ -93,6 +106,7 @@
         "partly-cloudy-day": '<img src="icons/Cloud-Sun.svg" alt="partly-cloudy-day">'}, {
         "partly-cloudy-night": '<img src="icons/Cloud-Moon.svg" alt="partly-cloudy-night">'
     }
+
     ];
     //This function creates the weather cards
     function createWeather() {
@@ -143,14 +157,6 @@
     }
     createWeather();
 
-    $('#latLonSearch').click(function() {
-        var latitude = $('latitude').val();
-        var longitude = $('longitude').val();
-        weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + '/' + latitude + ',' + longitude);
-        console.log(weather);
-        createWeather();
-    });
-
 
     // Create Map  | MAPBOX Variables
     mapboxgl.accessToken = mapboxToken;
@@ -174,13 +180,13 @@
                 .addTo(map);
         });
 
-    //This Updates the Marker and Weather
+    //This Updates the Marker and Weather on Drag
 
     function updateMarker() {
 
-        var newLngLat = marker.getLngLat();
+        newLngLat = marker.getLngLat();
         console.log(newLngLat);
-        map.setCenter(newLngLat);
+        map.flyTo({center: newLngLat});
         reverseGeocode(newLngLat, mapboxToken).then(function(dragResult) {
             $('#location').html(dragResult);
             console.log(dragResult);
@@ -203,13 +209,6 @@
         updateMarker();
         });
     });
-
-
-
-
-
-
-
 
 </script>
 </body>
