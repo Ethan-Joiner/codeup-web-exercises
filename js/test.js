@@ -1,62 +1,118 @@
 "use strict";
 
 $(document).ready(function() {
+$('body').append('<div>1</div>');
+var counter = 1;
+var interval;
+
+       //These two functions start the animation chain
+       $('div').click(function() {
+           $(this).css('position', 'absolute');
+           move();
+            interval = setInterval(function() {
+                if (counter < 4) {
+                    ++counter;
+                    $('div').html(counter);
+                    move();
+                } else {
+                    ++counter;
+                    $('div').html(counter + '<br><br>');
+                    clearInterval(interval)
+                    createSentence()
+                }
+                console.log(counter)
+        }, 2000)
+
+});
+function move() {
+    $('div')
+        .animate({ left: "+=200" }, 500)
+        .animate({ top: "+=200" }, 500)
+        .animate({ left: "-=200" }, 500)
+        .animate({ top: "-=200" }, 500);
+}
+
+// This fires after the chain is complete, entering the sentence one letter at a time
+var test = "Intervals can get frustrating. But also do some pretty neat stuff like this. ";
+var test2 = 0;
+var intervalID;
+function fade() {
+    $('body').children().append(test[test2]).fadeIn(150);
+    test2++;
+    console.log(test2);
+    if (test2 === test.length) {
+        clearInterval(intervalID);
+        setTimeout(circles, 2000)
+    }
+}
+
+function createSentence() {
+intervalID = setInterval(fade, 150);
+}
+
+//And this fires after the sentence is complete for 2 seconds
+
+    function circles() {
+        $('body').html("");
+        $('body').html('<div class="circle-container">' + '<div class="circle" id="circleOne"></div>' + '<div class="circle" id="circleTwo"></div>' + '<div class="circle" id="circleThree"></div>' + '<div>Click A Light</div><br>' + '<div><img id="carGif1" class="carGif" src="./img/cargif.gif" alt="carGif"></div></div>')
+    }
+
+    circles();
+
+    $('#circleOne').click(function () {
+        $('#carGif1')
+            .animate({ left: "+=600" }, 700)
+            .queue(function() {
+                $( this ).toggleClass( "flip" ).dequeue();
+            })
+            .animate({ left: "-=600" }, 700)
+            .queue(function() {
+                $( this ).toggleClass( "flip" ).dequeue();
+            })
+    });
+
+    $('#circleTwo').click(function () {
+        $('#carGif1')
+            .animate({ left: "+=600" }, 700)
+            .queue(function() {
+                $( this ).toggleClass( "flip" ).dequeue();
+            })
+            .animate({ left: "-=600" }, 2000)
+            .queue(function() {
+                $( this ).toggleClass( "flip" ).dequeue();
+            })
+    });
+
+    $('#circleThree').click(function() {
+        $('#carGif1')
+            .animate({left: '+=600'}, 700)
+            .queue(function() {
+                $( this ).toggleClass( "flip" ).dequeue();
+            });
+
+            setTimeout(createCarTwo, 700)
 
 
-    // $('div').click(function() {
-    //     $(this).css('position', 'absolute');
-    //     $(this)
-    //         .animate({ left: "+=200" }, 2000 )
-    //         .animate({ top: "+=400" }, 2000 )
-    //         $(this).css('color', 'blue')
-    //     })
+            $('#carGif1').animate({left: '-=275'}, 500)
+
+            setTimeout(reset, 2000)
+    });
+
+    function reset() {
+        $('div').last().html('<div><img id="carGif1" class = "carGif" src="./img/cargif.gif" alt="carGif"></div>')
+
+    }
+    function createCarTwo() {
+        $('div').last().append('<img id="carGif2" class = "carGif" src="./img/cargif.gif" alt="carGif">')
+        $('#carGif2')
+            .animate({left: '+=275'}, 500)
+    }
+
+
+
+
 
 });
 
-// var introString = "Each event is preceded by Prophecy.
-//                     But without the hero,
-//                         there is no Event.
-//                     -Zurin Arctus | the Underking
-//
-//                     In the waning years of the
-//                     Third Era of Tamriel,
-//                         a prisoner born on a certain day
-//                     to uncertain parents was sent
-//                     under guard, without explanation, to Morrowind,
-//                         ignorant of the role he was
-//                     to play in that nation'\s history…
-//
-//                     (female voice)
-//                     They have taken you from the Imperial City'\s prison,
-//                     first by carriage and now by boat,
-//                         to the east to Morrowind.
-//                         Fear not, for I am watchful,
-//                         you have been chosen.
-//
-//                     (male voice)
-//                     Wake up, we are here.
-//                     Why are you shaking?
-//                         Are you okay? Wakeup!";
 
-var test = "This is a test.";
-var test2 = 0;
-// function fade() {
-//     for (var i = 0; i < test.length - 1; i++) {
-//         $('body').hide().append(test[i]).fadeIn(400);
-// console.log(test[i])
-//     }
-// }
-// fade();
-function fade() {
-    $('body').append(test[test2]).fadeIn(200);
-    test2++;
-    console.log(test2)
-}
 
-setInterval(fade, 200);
-// function fadeLetter(i) {
-//     setTimeout(function () {
-//         $('body').hide().html(test2 + test[i]).fadeIn(200);
-//     }, 200)
-// }
-console.log(test);

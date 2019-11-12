@@ -6,14 +6,16 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        #map {
-            /* the width and height may be set to any size */
-            width: 100%;
-            height: 300px;
+
+        body {
+            min-width: 360px;
         }
         ul {
             padding: 0;
             height: 100%;
+        }
+        li {
+            color: wheat;
         }
         .card {
             height: 100%
@@ -26,17 +28,27 @@
         .row {
             margin-bottom: 2em;
         }
+        .container-fluid {
+            background-color: black;
+        }
+        .card {
+            background-color: #1C2E3B;
+        }
+
+        .card-title {
+            color: whitesmoke;
+        }
+        .jumbotron {
+            height: 200px;
+            padding: 0;
+            margin: 0;
+        }
         #location {
             margin-bottom: 1em;
         }
         #jumboImg {
             height: 100%;
             width: 100%
-        }
-        .jumbotron {
-            height: 200px;
-            padding: 0;
-            margin: 0;
         }
         #title {
             color: white;
@@ -48,15 +60,11 @@
         }
         #location {
             color: whitesmoke;
+            padding-top: 2em;
         }
-        .container-fluid {
-            background-color: black;
-        }
-        .card {
-            background-color: #1C2E3B;
-        }
-        li {
-            color: wheat;
+        #map {
+            width: 100%;
+            height: 400px;
         }
       
 
@@ -81,13 +89,12 @@
 <div id='map'></div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
-<script src="js/mapbox-geocoder-utils.js"></script>
+
 <script>
     "use strict";
 
@@ -105,16 +112,19 @@
         "cloudy": '<img src="icons/Cloud.svg" alt="cloudy">'}, {
         "partly-cloudy-day": '<img src="icons/Cloud-Sun.svg" alt="partly-cloudy-day">'}, {
         "partly-cloudy-night": '<img src="icons/Cloud-Moon.svg" alt="partly-cloudy-night">'
-    }
-
-    ];
+    }];
+    var high;
+    var low;
     //This function creates the weather cards
     function createWeather() {
         weather.done(function (data) {
         $('#insertWeather').html("");
-            console.log(data.daily.data[0]);
             for (var i = 0; i < 3; i++) {
+                high =  Math.round(data.daily.data[i].temperatureHigh);
+                low = Math.round(data.daily.data[i].temperatureLow);
                 var condition;
+                var date = new Date(data.daily.data[i].time * 1000);
+                date = date.toDateString();
                 switch (data.daily.data[i].icon) {
                     case "clear-day":
                         condition = conditions[0]["clear-day"];
@@ -149,13 +159,21 @@
                     default:
                         condition = '<img src="icons/Sun-Low.svg" alt="default">'
                 }
-                $('#insertWeather').append('<div class="col-4">' + '<div class="card">' +
-                    '<div class="card-body m-0">' + '<ul class="text-center flex m-0" style="list-style: none"><li>' + Math.round(data.daily.data[i].temperatureHigh) + "° / " + Math.round(data.daily.data[i].temperatureLow) + '°' + '</li><li>' + condition + '</li><li>' + data.daily.data[i].summary + '</li><li>' + '<strong>Humidity: </strong>' + Math.round(data.daily.data[i].humidity * 100) + '</li><li><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</li><li><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</li></ul>')
+                $('#insertWeather').append('<div class="col-4">' + '<h5 class="card-title text-center">' + date + '</h5>' + '<div class="card">' +
+                    '<div class="card-body m-0">' + '<ul class="text-center flex m-0" style="list-style: none"><li>' + high + "° / " + low + '°' + '</li><li>' + condition + '</li><li>' + data.daily.data[i].summary + '</li><li>' + '<strong>Humidity: </strong>' + Math.round(data.daily.data[i].humidity * 100) + '</li><li><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</li><li><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</li></ul>')
             }
 
         });
     }
     createWeather();
+
+    //Changes Temperature Display. Or not I can't get the API to cooperate
+    $('ul').children().first().click(function() {
+        high = (high - 32) * (5 / 9);
+        low = (high - 32) * (5 / 9);
+        console.log(this)
+        $(this).html('<li>' + high + "° / " + low + '°' + '</li>')
+    });
 
 
     // Create Map  | MAPBOX Variables
@@ -175,6 +193,12 @@
 
         geocode("San Antonio, TX", mapboxToken).then(function(sanAnResult) {
             map.setCenter(sanAnResult);
+            var object = {
+                lng: sanAnResult[0],
+                lat: sanAnResult[1]
+            };
+            reverseGeocode(object, mapboxToken).then(function(result) {
+                $('#location').html(result)});
             marker = marker
                 .setLngLat(sanAnResult)
                 .addTo(map);
@@ -209,6 +233,17 @@
         updateMarker();
         });
     });
+
+    //Re Centers you on current marker
+    $('#location').click(function() {
+        map.flyTo({center: marker.getLngLat()})
+    });
+
+
+    //Scrolls down to map when title is clicked
+    $('#title').click(function() {
+        document.getElementById("map").scrollIntoView( {behavior: "smooth" })
+    })
 
 </script>
 </body>

@@ -284,3 +284,5 @@ function manners(x) {
 }
 
 console.log(manners(words));
+
+
