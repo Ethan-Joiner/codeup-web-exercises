@@ -79,9 +79,14 @@ let veggieArray = fruitsAndVeggies.filter(x => x.type === 'vegetable');
 // TO DO TOGETHER: Let's reduce our original numbers Array into one single
 // value.
 
+    let single = numbers.reduce(((a,b) => a + b), 0);
+console.log(single);
+
 // TO DO: Using .reduce, subtract all numbers in the numbers Array from a
 // starting point of 100.
 
+let start100 = numbers.reduce(((a,b) => a - b), 100);
+console.log(start100);
 var shoppingCarts = [
     {
         apples: 8,
@@ -108,19 +113,48 @@ var shoppingCarts = [
 
 // TO DO: Using .reduce, return the total number of apples.
 
+let apples = shoppingCarts.reduce(((a,b) => a + b.apples), 0);
+console.log(apples);
+
 // TO DO TOGETHER: let's use .reduce to return an object that has properties
 // representing total values for each fruit.
+
+let totalValues = shoppingCarts.reduce(((a,b) => {
+        a.apples += b.apples;
+        a.bananas += b.bananas;
+        a.oranges += b.oranges;
+        a.grapes += b.grapes;
+    return a
+    }
+), {apples: 0, oranges: 0, bananas: 0, grapes: 0});
+console.log(totalValues);
+
 
 const colors = ['red','orange','red','blue','blue','green','red'];
 
 // TO DO: Count the number of times a color appears in this Array. Hint:
 // your initial value should be an empty object.
 
+const colorCount = colors.reduce(function(colorCount, color){
+    if (typeof colorCount[color] === "undefined"){
+        colorCount[color] = 1
+    } else {
+        colorCount[color] += 1
+    }
+
+    return colorCount;
+}, {});
+
+console.log(colorCount);
+
 const lyrics = ['we','all','live','in','a','yellow','submarine'];
 
 //TO DO TOGETHER: Using reduce, let's turn this into a string.
-// const oneLine =
-// console.log(oneLine);
+const oneLine = lyrics.reduce(function(currentString, word) {
+    return `${currentString} ${word}`
+},"");
+
+console.log(oneLine);
 
 // Bonus: Create an Array of all the unique fur colors!
 var hamsters = [
@@ -156,4 +190,13 @@ var hamsters = [
         dateOfBirth: "January 14"
     }
 ];
+
+let furColors = hamsters.reduce(((a,b) => {
+    for (let i = 0; i < b.fur.length; i++) {
+
+    }
+    a.push(b.fur);
+    return a;
+}), []);
+console.log(furColors);
 
