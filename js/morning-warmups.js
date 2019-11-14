@@ -285,9 +285,9 @@ function manners(x) {
 
 console.log(manners(words));
 
-<<<<<<< HEAD
 
-=======
+
+
 function randomBoolean() {
     var random = Math.floor(Math.random() * 2) +1;
     return (random === 1)
@@ -300,4 +300,17 @@ function evens(x) {
 }
 
 console.log(evens([1, 2, 3, 4, 5, 6, 7, 8]));
->>>>>>> 428415f4da9fe493651224b75a6ae095f1357c01
+
+function even(num) {
+    return new Promise((resolve, reject) => {
+        if (num % 2 === 0) {
+            resolve(`You did it`)
+        } else {
+            reject(`Ya blew it`)
+        }
+    })
+}
+
+console.log(even(2));
+console.log(even(`dog`));
+
