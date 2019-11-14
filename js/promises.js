@@ -14,18 +14,15 @@ wait(2).then(() => console.log("You'll see this after " + numb + ' seconds.'));
 
 function getDate(user) {
     fetch(`https://api.github.com/users/${user}/events`, {headers: {'Authorization': `token ${gitKey}`}})
-        .then(response => {
-            let user1 = response.json().then((user) => {
-                let first = user.find(function(e) {
-                    if (e.type === "PushEvent") {
-                        return e
-                    }});
-                        console.log(first.created_at);
-                return first.created_at
-            });
-            // console.log(user1);
-        });
-
+        .then(response => response.json())
+        .then(user => {user.find(e => {
+                if (e.type === "PushEvent") {
+                    console.log(e.created_at);
+                    return e.created_at;
+                    }})})
+        .catch(error => console.error(error))
 }
 
 getDate(`Ethan-Joiner`);
+getDate(`miguelgarcia210`);
+
