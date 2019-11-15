@@ -314,3 +314,12 @@ function even(num) {
 console.log(even(2));
 console.log(even(`dog`));
 
+const hello = () => {
+    return new Promise((resolve, reject) => {
+            resolve(`Hello`)
+        })
+};
+hello().then(message => {
+    document.getElementsByTagName(`body`)[0].innerHTML +=  `<h1>${message}</h1>`
+});
+
