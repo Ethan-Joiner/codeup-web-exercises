@@ -323,8 +323,6 @@ hello().then(message => {
     document.getElementsByTagName(`body`)[0].innerHTML +=  `<h1>${message}</h1>`
 });
 
-const pi6 = () => {
-    return Math.PI.toFixed(6)
-};
+const pi6 = () =>  parseFloat(Math.PI.toFixed(6));
 console.log(pi6());
 
