@@ -9,7 +9,19 @@ h1 {
 body {
     background-color: green;
 }
-li {
+li, a {
     color: red;
     text-shadow: 1px 1px black;
+    list-style: none;
 }
+#subButton {
+    width: 100%;
+}
+.head {
+    color: red;
+    text-shadow: .5px .5px white;
+}
+ol {
+    padding-left: 0;
+}
+
