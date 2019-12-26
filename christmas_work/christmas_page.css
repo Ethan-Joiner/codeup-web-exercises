@@ -1,3 +1,15 @@
 .jumbotron {
-    background-image: url("../img/christmas-header.jpeg")
+    background-image: url("../img/christmas-header.jpeg");
+    background-size: cover;
+}
+h1 {
+    color: white;
+    text-shadow: 3px 3px black;
+}
+body {
+    background-color: green;
+}
+li {
+    color: red;
+    text-shadow: 1px 1px black;
 }
