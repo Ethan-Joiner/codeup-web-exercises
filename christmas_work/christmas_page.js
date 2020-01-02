@@ -1,19 +1,43 @@
 'use strict';
 
-$(document).ready(function () {
+let songArray = [
+    {
+        name: "Please Come Home For Chrismas - The Eagles",
+        link: "https://www.youtube.com/watch?v=5LUfDEATQHM",
+    },
+    {
+        name: "O Holy Night - Trans-Siberian Orchestra",
+        link: "https://www.youtube.com/watch?v=fcMe551smvs",
+    },
+    {
+        name: "Carol Of The Bells - Trans-Siberian Orchestra",
+        link: "https://www.youtube.com/watch?v=sCabI3MdV9g",
+    }
+];
 
-    $('.subButton').click(() => {
-        if ($('#inputSongName').val().length > 1 && $('#inputYoutubeLink').val().length > 1) {
-            $('#songList').append($('#inputSongName').val());
-        }
-    });
 
+
+    // TO SHOW LIST
     function populateList() {
-        $('#songList').html(`<li class="text-center"><a href="https://www.youtube.com/watch?v=5LUfDEATQHM">Please Come Home For Chrismas - The Eagles</a></li>
-                                   <li class="text-center"><a href="https://www.youtube.com/watch?v=fcMe551smvs">O Holy Night - Trans-Siberian Orchestra</a></li>
-                                   <li class="text-center"><a href="https://www.youtube.com/watch?v=sCabI3MdV9g">Carol Of The Bells - Trans-Siberian Orchestra</a></li>`)
+        for (let i = 0; i < songArray.length; i++)
+        {
+            $('#songList').append(`<li class="text-center"><a href=${songArray[i].link}>${songArray[i].name}</a></li>`)
+        }
     }
     populateList();
 
-    function
+// TO ADD SONGS
+$('#subButton').click(() => {
+    if ($('#inputSongName').val().length > 1) {
+        let song = {
+            name: $('#inputSongName').val()
+        };
+        songArray.push(song);
+        console.log(songArray);
+        $('#songList').html("");
+
+        populateList();
+    }
 });
+
+    // function
