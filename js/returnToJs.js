@@ -5,3 +5,7 @@ for (let i = 1; i <= num; i++) {
 }
 return total;
 }
+
+function filterArray(arr) {
+
+}
