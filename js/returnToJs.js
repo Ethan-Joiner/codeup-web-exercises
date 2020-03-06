@@ -23,8 +23,7 @@ let promise = new Promise( (resolve) => {
             resolve("It's a dog!")
         }
         if(animal !== "dog") {
-            /* need something here, you might also need to pass
-            something else besides the resolve callback */
+            reject("It's not a dog!")
         }
     }, 1000)
-})
+});
