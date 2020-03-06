@@ -15,3 +15,16 @@ arr.forEach(function(item) {
     });
     return arr2;
 }
+
+let promise = new Promise( (resolve) => {
+    let animal = "cat"
+    setTimeout(() => {
+        if(animal === "dog") {
+            resolve("It's a dog!")
+        }
+        if(animal !== "dog") {
+            /* need something here, you might also need to pass
+            something else besides the resolve callback */
+        }
+    }, 1000)
+})
