@@ -7,5 +7,11 @@ return total;
 }
 
 function filterArray(arr) {
-
+let arr2 = [];
+arr.forEach(function(item) {
+    if (typeof item!=="string") {
+        arr2.push(item)
+    }
+    });
+    return arr2;
 }
