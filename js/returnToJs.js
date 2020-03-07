@@ -27,5 +27,6 @@ let promise = new Promise( (resolve) => {
         if(animal !== "dog") {
             reject("It's not a dog!")
         }
+    //    WHy Timeout?
     }, 1000)
 });
