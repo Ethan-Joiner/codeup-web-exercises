@@ -15,7 +15,7 @@ arr.forEach(function(item) {
     });
     return arr2;
 }
-
+// I need to work on promises
 let promise = new Promise( (resolve) => {
     let animal = "cat"
     setTimeout(() => {
