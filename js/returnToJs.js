@@ -23,6 +23,7 @@ let promise = new Promise( (resolve) => {
         if(animal === "dog") {
             resolve("It's a dog!")
         }
+        // explain better
         if(animal !== "dog") {
             reject("It's not a dog!")
         }
