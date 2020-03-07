@@ -19,6 +19,7 @@ arr.forEach(function(item) {
 let promise = new Promise( (resolve) => {
     let animal = "cat"
     setTimeout(() => {
+        // rework this
         if(animal === "dog") {
             resolve("It's a dog!")
         }
