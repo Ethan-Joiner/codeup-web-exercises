@@ -33,6 +33,7 @@ let promise = new Promise( (resolve) => {
     }, 1000)
 });
 
+// This is a function to take in a note and return it's enharmonic equal
 function getEquivalent(note) {
 switch (note) {
     case "Ab":
