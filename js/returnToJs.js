@@ -1,10 +1,11 @@
 function addUp(num) {
-let total = 0;
-for (let i = 1; i <= num; i++) {
-    total += i;
+    let total = 0;
+    for (let i = 1; i <= num; i++) {
+        total += i;
+    }
+    return total;
 }
-return total;
-}
+
 
 function filterArray(arr) {
 let arr2 = [];
@@ -15,9 +16,10 @@ arr.forEach(function(item) {
     });
     return arr2;
 }
+
 // I need to work on promises
 let promise = new Promise( (resolve) => {
-    let animal = "cat"
+    let animal = "cat";
     setTimeout(() => {
         // rework this
         if(animal === "dog") {
@@ -52,8 +54,6 @@ switch (note) {
     case "Gb":
         return "F#";
     case "G#":
-        return "Ab"
+        return "Ab";
     }
-    return "";
-}
 }
