@@ -30,3 +30,7 @@ let promise = new Promise( (resolve) => {
     //    WHy Timeout?
     }, 1000)
 });
+
+function getEquivalent(note) {
+
+}
