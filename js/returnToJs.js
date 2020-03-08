@@ -32,5 +32,16 @@ let promise = new Promise( (resolve) => {
 });
 
 function getEquivalent(note) {
+switch (note) {
+    case "Ab":
+        return "G#";
+    case "A#":
+        return "Bb"
+    case "Bb":
+        return "A#"
+    case "C#":
+        return "Db"
+    }
 
+}
 }
