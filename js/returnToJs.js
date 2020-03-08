@@ -36,12 +36,24 @@ switch (note) {
     case "Ab":
         return "G#";
     case "A#":
-        return "Bb"
+        return "Bb";
     case "Bb":
-        return "A#"
+        return "A#";
     case "C#":
-        return "Db"
+        return "Db";
+    case "Db":
+        return "C#";
+    case "D#":
+        return "Eb";
+    case "Eb":
+        return "D#";
+    case "F#":
+        return "Gb";
+    case "Gb":
+        return "F#";
+    case "G#":
+        return "Ab"
     }
-
+    return "";
 }
 }
