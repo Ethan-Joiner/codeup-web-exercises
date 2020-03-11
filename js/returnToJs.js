@@ -6,7 +6,6 @@ function addUp(num) {
     return total;
 }
 
-
 function filterArray(arr) {
 let arr2 = [];
 arr.forEach(function(item) {
