@@ -170,5 +170,7 @@ function calculateTotal(luckyNumber, total) {
 
 //    Math.floor will round down for you
 var luckyNumber = Math.floor(Math.random() * 6);
+
+// What does prompt do? Simple alert?
 var userBill = parseFloat(prompt("How much was your total bill?"));
 calculateTotal(luckyNumber, userBill);
