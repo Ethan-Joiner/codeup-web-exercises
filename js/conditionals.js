@@ -167,6 +167,8 @@ function calculateTotal(luckyNumber, total) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
+
+//    Math.floor will round down for you
 var luckyNumber = Math.floor(Math.random() * 6);
 var userBill = parseFloat(prompt("How much was your total bill?"));
 calculateTotal(luckyNumber, userBill);
