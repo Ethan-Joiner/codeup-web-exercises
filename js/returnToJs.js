@@ -6,6 +6,7 @@ function addUp(num) {
     return total;
 }
 
+// Take an array and remove all strings
 function filterArray(arr) {
 let arr2 = [];
 arr.forEach(function(item) {
