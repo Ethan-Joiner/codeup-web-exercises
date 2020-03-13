@@ -83,7 +83,7 @@ return double;
 function myPi(n) {
 let pi = Math.PI.toString();
 let reduced = "";
-for (let i = 0; i < n; i++){
+for (let i = 0; i <= n + 1; i++){
     reduced += pi.charAt(i)
 }
 return parseFloat(reduced);
