@@ -62,6 +62,10 @@ switch (note) {
 //Create the function that takes an array with objects and returns the sum of people's budgets.
 
 function getBudgets(arr) {
-
+let total = 0;
+arr.forEach(function() {
+    total += arr.budget;
+})
+    return total;
 }
 
