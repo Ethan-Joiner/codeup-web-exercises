@@ -84,6 +84,9 @@ function myPi(n) {
 let pi = Math.PI.toString();
 let reduced = "";
 for (let i = 0; i <= n + 1; i++){
+    if (pi.charAt((parseInt(i) + 1) >= 5)){
+
+    }
     reduced += pi.charAt(i)
 }
 return parseFloat(reduced);
