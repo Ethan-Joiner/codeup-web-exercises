@@ -69,9 +69,8 @@ arr.forEach(function(person) {
     return total;
 }
 
-getBudgets([
-    { name: "John", age: 21, budget: 23000 },
-    { name: "Steve",  age: 32, budget: 40000 },
-    { name: "Martin",  age: 16, budget: 2700 }
-]);
+// Create a function that takes a string and returns a string in which each character is repeated once.
+function doubleChar(str) {
+
+}
 
