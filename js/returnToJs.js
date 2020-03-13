@@ -86,6 +86,6 @@ let reduced = "";
 for (let i = 0; i < n; i++){
     reduced += pi.charAt(i)
 }
-return parseInt(reduced);
+return parseFloat(reduced);
 }
 
