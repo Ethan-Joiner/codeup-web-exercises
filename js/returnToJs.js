@@ -63,9 +63,15 @@ switch (note) {
 
 function getBudgets(arr) {
 let total = 0;
-arr.forEach(function() {
-    total += arr.budget;
-})
+arr.forEach(function(person) {
+    total += person.budget;
+});
     return total;
 }
+
+getBudgets([
+    { name: "John", age: 21, budget: 23000 },
+    { name: "Steve",  age: 32, budget: 40000 },
+    { name: "Martin",  age: 16, budget: 2700 }
+]);
 
