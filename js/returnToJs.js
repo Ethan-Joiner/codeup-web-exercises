@@ -79,3 +79,8 @@ for (let i = 0; i < str.length; i++){
 return double;
 }
 
+//Given a number n, write a function that returns PI to n decimal places.
+function myPi(n) {
+
+}
+
