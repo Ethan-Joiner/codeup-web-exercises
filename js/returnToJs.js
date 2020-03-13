@@ -71,6 +71,11 @@ arr.forEach(function(person) {
 
 // Create a function that takes a string and returns a string in which each character is repeated once.
 function doubleChar(str) {
-
+let double = "";
+for (let i = 0; i < str.length - 1; i++){
+    double += str.charAt(i);
+    double += str.charAt(i);
+}
+return double;
 }
 
