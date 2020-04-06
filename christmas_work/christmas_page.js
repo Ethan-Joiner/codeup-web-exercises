@@ -1,5 +1,6 @@
 'use strict';
 
+// Created array of objects containing title and youtube link
 let songArray = [
     {
         name: "Please Come Home For Chrismas - The Eagles",
